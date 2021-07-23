@@ -1,0 +1,19 @@
+Hey All!
+
+Thank you so much for your support in the content we make :) 
+
+I just wanted to preface this project and say - I hacked this together in a few hours amongst trying to integrate the assets the team provided to me. The code isnt commented or even formatted correctly and for that I apologise. 
+
+That being said, if you'd like to see us make more games (please please please) leave a comment/message on Jazza Videos and on the vlog and hopefully we'll see more in the future :)
+
+I can't wait to see what you make of this!
+
+Best of luck
+Rob
+
+P.S - In no particular order here are 5 things I would have added if I had more time
+ > Enemy Projectiles
+ > A combat system
+ > Power ups for movement/speed/attack etc
+ > A minimap
+ > Local Multiplayer

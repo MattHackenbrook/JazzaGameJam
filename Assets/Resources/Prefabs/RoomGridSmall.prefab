@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6600228770090494602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6600228770090494612}
+  - component: {fileID: 6600228770090494603}
+  - component: {fileID: 8643769771169887626}
+  - component: {fileID: 2085534555861340902}
+  m_Layer: 0
+  m_Name: RoomGridSmall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6600228770090494612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600228770090494602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -158.20709, y: -226.57027, z: 7.144825}
+  m_LocalScale: {x: 15, y: 1, z: 15}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6600228770090494603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600228770090494602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0726a0664d397642adbb2dfb369eb40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_options:
+  - {fileID: 6037253503842888011, guid: 8b47646649baeec46b4d2408db1377ce, type: 3}
+  - {fileID: -3786668490467654605, guid: 44769e565a4bbdb4db3b99ecce75e7e7, type: 3}
+  - {fileID: 1511474914532636846, guid: 9ba0bb06e4a0b41418255a202c79ceb1, type: 3}
+  - {fileID: 9140973320674267094, guid: 85f84acf31e23b24fb623968f008000c, type: 3}
+  - {fileID: 9140973320674267094, guid: 85f84acf31e23b24fb623968f008000c, type: 3}
+  - {fileID: 8959965052878318921, guid: d343e08d2ea8246469b75c85aa25e445, type: 3}
+  - {fileID: -3243164351643068148, guid: b890e60d434258f4fa87ab7c81bcc6e6, type: 3}
+  - {fileID: -6228426770161157156, guid: 5eaafc7c8d668ed4190d23fd097bd3ab, type: 3}
+  - {fileID: -2966686751829285725, guid: f0362e5a1709b3f4889cb192a26d399f, type: 3}
+  - {fileID: -6471310646275869806, guid: 6cdc6ed44401f784aa725a990bbab6a9, type: 3}
+  - {fileID: 5973503875351254034, guid: 0401335e64a3dd842ad46366999e4fa3, type: 3}
+  m_room: {fileID: 0}
+--- !u!33 &8643769771169887626
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600228770090494602}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2085534555861340902
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600228770090494602}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 561eb85959ee435499b20c78afd65169, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
