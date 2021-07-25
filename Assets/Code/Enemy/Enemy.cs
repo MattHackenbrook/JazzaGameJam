@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    this.transform.position += (m_player.transform.position - transform.position).normalized * Time.deltaTime * 3;
+                    this.transform.position += (m_player.transform.position - transform.position).normalized * Time.deltaTime * 4;
                     m_lr.enabled = false;
                 }
                 // Debug.Log("Nowall");
