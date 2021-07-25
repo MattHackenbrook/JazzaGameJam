@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 7
   m_health: 0
+  m_energy: 0
   m_moveDir: 
   m_idleSprite: {fileID: 0}
   m_sprites:
@@ -94,6 +95,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 3b526470673843a4688904597ddd095b, type: 2}
   - {fileID: 7400000, guid: 7b8b8aca021f9c846bea3ca549b965d3, type: 2}
   m_keys: 0
+  directionalArrow: {fileID: 5634776675731851176, guid: e06ad6cbc3d41b247821b9d0b4d66282, type: 3}
   m_anim: {fileID: 2775106294594840770}
   m_animIdle: 
 --- !u!81 &-3219254848737557875

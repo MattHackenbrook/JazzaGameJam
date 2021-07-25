@@ -19,13 +19,14 @@ public class Player : MonoBehaviour
     public List<Sprite> m_sprites;
     public List<AnimationClip> m_animsIdle;
     public int m_keys;
+    public GameObject directionalArrow;
 
     public Animator m_anim;
     public string m_animIdle;
     int f_chestCount;
 
     Vector2 f_movement;
-    bool up, down, left, right, sprint = false;
+    bool up, down, left, right, sprint, directions = false;
 
     // Start is called before the first frame update
     void Start()
@@ -67,13 +68,15 @@ public class Player : MonoBehaviour
         {
             f_movement = gamepad.leftStick.ReadValue();
             sprint = gamepad.leftTrigger.isPressed;
+            directions = gamepad.bButton.isPressed;
         }
 
         float angle = Mathf.Atan2(f_movement.x, f_movement.y) * Mathf.Rad2Deg;
         angle = Mathf.Round(angle / 45.0f) * 45.0f;
 
         playerAnitmations(angle);
-        
+
+        displayDirections(directions);
 
     }
 
@@ -211,6 +214,7 @@ public class Player : MonoBehaviour
         f_movement = Vector2.zero;
         //Detect movement commands
         if (Input.GetKeyDown(KeyCode.LeftShift)) { sprint = true; }
+        if (Input.GetKeyDown(KeyCode.LeftControl)) { directions = true; }
         if (Input.GetKeyDown(KeyCode.W)) { up = true; UnityEngine.Debug.Log("up"); }
         if (Input.GetKeyDown(KeyCode.A)) { left = true; UnityEngine.Debug.Log("left"); }
         if (Input.GetKeyDown(KeyCode.S)) { down = true; UnityEngine.Debug.Log("down"); }
@@ -218,6 +222,7 @@ public class Player : MonoBehaviour
 
         //Detect halt movement commands
         if (Input.GetKeyUp(KeyCode.LeftShift)) { sprint = false; }
+        if (Input.GetKeyUp(KeyCode.LeftControl)) { directions = false; }
         if (Input.GetKeyUp(KeyCode.W)) up = false;
         if (Input.GetKeyUp(KeyCode.A)) left = false;
         if (Input.GetKeyUp(KeyCode.S)) down = false;
@@ -227,6 +232,73 @@ public class Player : MonoBehaviour
         if (down && !up) f_movement.y = -1;
         if (right && !left) f_movement.x = 1;
         if (left && !right) f_movement.x = -1;
+    }
+
+    void displayDirections(bool show)
+    {
+        var arrows = GameObject.FindGameObjectsWithTag("DirectionalArrow");
+        if (!show || m_energy <= 0)
+        {
+            foreach(var arrow in arrows)
+            {
+                arrow.SetActive(false);
+            }
+            return;
+        }
+
+        m_energy = Math.Max(m_energy - 0.5f, 0);
+
+        var chests = GameObject.FindGameObjectsWithTag("Chest");
+
+        int i;
+        for (i = 0; i < chests.Length; i++)
+        {
+            float angle = Mathf.Atan2(gameObject.transform.position.z - chests[i].transform.position.z, chests[i].transform.position.x - gameObject.transform.position.x) * Mathf.Rad2Deg;
+            if (i < arrows.Length)
+            {
+                arrows[i].transform.eulerAngles = new Vector3(0, angle, 0);
+                arrows[i].SetActive(true);
+            }
+            else
+            {
+                GameObject arrow = Instantiate(directionalArrow);
+                arrow.transform.SetParent(gameObject.transform);
+                arrow.transform.eulerAngles = new Vector3(0, angle, 0);
+                arrow.transform.localPosition = new Vector3(0, 0, 0);
+                arrow.SetActive(true);
+            }
+        }
+        if(i == 0)
+        {
+            Vector3 endPosition = GameObject.FindGameObjectWithTag("End").transform.position;
+            float angle = Mathf.Atan2(gameObject.transform.position.z - endPosition.z, endPosition.x - gameObject.transform.position.x) * Mathf.Rad2Deg;
+            if (arrows.Length > 0 && arrows[0] != null)
+            {
+                arrows[0].transform.eulerAngles = new Vector3(0, angle, 0);
+                arrows[0].SetActive(true);
+            }
+            else
+            {
+                GameObject arrow = Instantiate(directionalArrow);
+                arrow.transform.SetParent(gameObject.transform);
+                arrow.transform.eulerAngles = new Vector3(0, angle, 0);
+                arrow.transform.localPosition = new Vector3(0, 0, 0);
+                arrow.SetActive(true);
+            }
+        }
+        else
+        {
+            while (i < arrows.Length)
+            {
+                arrows[i].SetActive(false);
+                i++;
+            }
+        }
+
+       
+
+
+
     }
 
 }

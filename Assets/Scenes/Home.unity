@@ -653,13 +653,22 @@ MonoBehaviour:
 
     Left Analog - Movement
 
+    Left Trigger - Sprint
+
+    B
+    - Show Path
+
     A - Interact
 
 
     Keyboard:
 
-    WASD
-    - movement
+    WASD - Movement
+
+    Shift
+    - Sprint
+
+    Ctrl - Show path
 
     F - Interact'
 --- !u!222 &962730605

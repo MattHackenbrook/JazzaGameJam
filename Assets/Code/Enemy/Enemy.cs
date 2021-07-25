@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
                     m_lr.transform.rotation = Random.rotation;
                     m_electricLineMaterial.mainTexture = m_lightningTextures[Random.Range(0, m_lightningTextures.Count)];
                     Debug.DrawRay(transform.position, m_player.transform.position - transform.position, Color.green);
-                    m_player.GetComponent<Player>().m_health -= Time.deltaTime * GameObject.FindObjectOfType<GameManager>().m_level;
+                    m_player.GetComponent<Player>().m_health -= Time.deltaTime * GameObject.FindObjectOfType<GameManager>().m_level * 2;
                     //need particle effect
                     // Debug.Log("Youlose");
                 }
